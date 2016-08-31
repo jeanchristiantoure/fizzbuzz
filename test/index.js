@@ -14,7 +14,7 @@ exec('node .', function(err, stdout, stderr) {
             throw err;
         }
 
-        var expected = exp.split('\n');
+        var expected = exp.split('\r\n');
         var actual = stdout.split('\n');
 
         for (var i = 0, mx = expected.length; i < mx; i++) {
