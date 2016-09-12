@@ -2,6 +2,7 @@ var readFile = require('fs').readFile;
 var assert = require('assert');
 var exec = require('child_process').exec;
 var join = require('path').join;
+var os = require('os');
 
 // Test the expected output.
 exec('node .', function(err, stdout, stderr) {
@@ -14,7 +15,7 @@ exec('node .', function(err, stdout, stderr) {
             throw err;
         }
 
-        var expected = exp.split('\n');
+        var expected = exp.split(os.EOL);
         var actual = stdout.split('\n');
 
         for (var i = 0, mx = expected.length; i < mx; i++) {
